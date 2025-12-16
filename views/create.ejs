@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <h1 class="logo">My Blog</h1>
+    
+  </div>
+</header>
+
+
+
+<%- include("partials/header") %>
+
+<h2 class="create-title">Create a New Post</h2>
+
+<form action="/create" method="POST" class="create-form">
+
+  <input 
+    name="title" 
+    type="text" 
+    placeholder="Post Title" 
+    required
+    class="create-input"
+  />
+
+  <textarea 
+    name="content" 
+    rows="7" 
+    placeholder="Write your content..." 
+    required
+    class="create-textarea">
+  </textarea>
+
+  <button type="submit" class="create-button">
+    Publish
+  </button>
+
+</form>
+
+<%- include("partials/footer") %>

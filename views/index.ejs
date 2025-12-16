@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+    
+  </header>
+
+<%- include("partials/header") %>
+
+<div class="container">
+
+  <div class="main-content">
+    <% posts.forEach(post => { %>
+      <div class="post">
+        <p><%= post.date %></p>
+        <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+        <p><%= post.content.substring(0, 150) %>...</p>
+        <hr>
+      </div>
+    <% }) %>
+  </div>
+
+  <div class="sidebar">
+    <a href="/create" class="create-btn">Create Post</a>
+
+    <h3>Recent Posts</h3>
+    <ul>
+      <% posts.forEach(post => { %>
+        <li>
+          <a href="/post/<%= post.id %>"><%= post.title %></a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+
+</div>
+
+<%- include("partials/footer") %>
