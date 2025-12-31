@@ -1,2 +1,1 @@
-# blog
-This is a blog web application developed as a learning project. It allows users to create, view, and manage blog posts using a clean and simple interface.
+This project is a full-stack personal blog application designed to allow users to create, read, update, and delete (CRUD) blog posts easily. The application is built using Node.js and Express.js on the backend, with EJS templates for dynamic page rendering, and CSS for styling. It provides a clean, user-friendly interface to manage content efficiently.
