@@ -98,7 +98,7 @@
 }
 
 .post-sidebar ul {
-  list-style: none;
+  list-style: underline;
   padding-left: 0;
 }
 
@@ -152,3 +152,44 @@
   background: #333;
 }
 
+/* Post Actions Buttons */
+.post-actions {
+  margin-top: 10px;
+}
+
+.post-actions a {
+  text-decoration: none;
+  padding: 6px 12px;
+  margin-right: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #4CAF50; /* green */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #f44336; /* red */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #da190b;
+}
+
+/* Optional: adjust buttons for mobile */
+@media (max-width: 600px) {
+  .post-actions a {
+    display: block;
+    margin-bottom: 5px;
+  }
+}

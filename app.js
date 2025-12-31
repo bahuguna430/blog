@@ -60,6 +60,38 @@ app.get("/post/:id", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about");
 });
+// Render Edit Post Form
+app.get("/edit/:id", (req, res) => {
+  const post = posts.find(p => p.id == req.params.id);
+  if (!post) return res.send("Post not found");
+  res.render("edit", { post });
+});
+
+// Handle Edit Post Form submission
+app.post("/edit/:id", (req, res) => {
+  const post = posts.find(p => p.id == req.params.id);
+  if (!post) return res.send("Post not found");
+
+  post.title = req.body.title;
+  post.content = req.body.content;
+  post.date = new Date().toLocaleString(); // Update date
+  res.redirect("/post/" + post.id);
+});
+
+// Render Delete Confirmation Page
+app.get("/delete/:id", (req, res) => {
+  const post = posts.find(p => p.id == req.params.id);
+  if (!post) return res.send("Post not found");
+  res.render("delete", { post });
+});
+
+// Handle Delete Post
+app.post("/delete/:id", (req, res) => {
+  const postId = parseInt(req.params.id);
+  posts = posts.filter(post => post.id !== postId);
+  res.redirect("/");
+});
+
 
 
 
